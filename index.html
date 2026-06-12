@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>高度人才 1 号转 2 号材料清单</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <p class="eyebrow">日本在留手续辅助清单</p>
+      <h1>高度人才 1 号转高度人才 2 号</h1>
+      <p class="lead">按你的条件自动筛出材料、准备方和工作日限制。官方信息核对日：2026-06-12。</p>
+    </div>
+    <div class="statusCard">
+      <span id="doneCount">0</span>
+      <small>已完成</small>
+    </div>
+  </header>
+
+  <main class="layout">
+    <aside class="controls" aria-label="条件设置">
+      <section>
+        <h2>你的条件</h2>
+        <label>
+          申请目标
+          <select id="route">
+            <option value="same">高度 1 号活动内容不变</option>
+            <option value="changed">活动内容/所属机构有变化</option>
+          </select>
+        </label>
+        <label>
+          分数与持续期间
+          <select id="scorePath">
+            <option value="80">80 分以上，且维持 1 年以上</option>
+            <option value="70">70 分以上，且维持 3 年以上</option>
+            <option value="basic">只按官方原始 5 年/2 年准备</option>
+          </select>
+        </label>
+        <label>
+          住民税缴纳方式
+          <select id="residentTax">
+            <option value="withheld">近 3 年全部工资天引</option>
+            <option value="mixed">有普通征收/自己缴纳期间</option>
+          </select>
+        </label>
+        <label>
+          年金情况
+          <select id="pension">
+            <option value="employee">厚生年金为主</option>
+            <option value="national">有国民年金期间</option>
+            <option value="mixed">两者都有</option>
+          </select>
+        </label>
+        <label>
+          健康保险
+          <select id="health">
+            <option value="employee">健康保险为主</option>
+            <option value="national">有国民健康保险期间</option>
+            <option value="mixed">两者都有</option>
+          </select>
+        </label>
+        <label class="check">
+          <input id="owner" type="checkbox">
+          <span>我是社会保险适用事业所的事业主</span>
+        </label>
+        <label class="check">
+          <input id="proxy" type="checkbox">
+          <span>由本人以外的人提交</span>
+        </label>
+      </section>
+
+      <section>
+        <h2>时间规划</h2>
+        <label>
+          想提交的日期
+          <input id="targetDate" type="date">
+        </label>
+        <div id="dateAdvice" class="advice"></div>
+      </section>
+
+      <section class="actions">
+        <button id="printBtn" type="button">打印 / 存 PDF</button>
+        <button id="resetBtn" type="button">重置勾选</button>
+      </section>
+    </aside>
+
+    <section class="workspace">
+      <div class="summary">
+        <div>
+          <h2>自动判断</h2>
+          <p id="summaryText"></p>
+        </div>
+        <a href="https://www.moj.go.jp/isa/applications/status/designatedactivities02_00004.html#midashi04" target="_blank" rel="noreferrer">打开官方高度 2 号页面</a>
+      </div>
+
+      <nav class="tabs" aria-label="筛选">
+        <button class="active" data-filter="all" type="button">全部</button>
+        <button data-filter="me" type="button">本人</button>
+        <button data-filter="company" type="button">公司</button>
+        <button data-filter="office" type="button">行政窗口</button>
+        <button data-filter="online" type="button">可线上</button>
+      </nav>
+
+      <div id="groups" class="groups"></div>
+
+      <section class="notes">
+        <h2>使用前请确认</h2>
+        <p>这是准备辅助工具，不替代入管审查或行政书士意见。日本发行的证明书通常要求发行日起 3 个月内；外文材料需要日文翻译；提交后入管也可能追加要求资料。</p>
+        <p>周六、周日多数市区町村、税务署、年金事务所、入管窗口不办公。页面里的日期提醒只排除周末，日本法定节假日请在预约前再确认。</p>
+      </section>
+    </section>
+  </main>
+
+  <script src="./app.js"></script>
+</body>
+</html>

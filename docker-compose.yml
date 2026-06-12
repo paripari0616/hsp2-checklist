@@ -1,0 +1,7 @@
+services:
+  hsp2-checklist:
+    build: .
+    image: hsp2-checklist:latest
+    ports:
+      - "8080:80"
+    restart: unless-stopped

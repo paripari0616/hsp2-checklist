@@ -1,0 +1,407 @@
+:root {
+  color-scheme: light;
+  --ink: #15201d;
+  --muted: #64706b;
+  --line: #dbe2dd;
+  --paper: #fbfcfa;
+  --panel: #ffffff;
+  --accent: #176b56;
+  --accent-2: #b85c38;
+  --soft: #edf6f2;
+  --warn: #fff1dd;
+  --shadow: 0 14px 40px rgba(32, 46, 41, 0.09);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans SC", "PingFang SC", sans-serif;
+  background: var(--paper);
+  color: var(--ink);
+  letter-spacing: 0;
+}
+
+a {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.topbar {
+  min-height: 210px;
+  padding: 36px clamp(18px, 5vw, 64px) 28px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  background:
+    linear-gradient(115deg, rgba(23, 107, 86, 0.96), rgba(30, 52, 47, 0.93)),
+    url("https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?auto=format&fit=crop&w=1600&q=80");
+  background-size: cover;
+  background-position: center;
+  color: white;
+}
+
+.eyebrow {
+  margin: 0 0 8px;
+  font-size: 13px;
+  font-weight: 700;
+  opacity: 0.82;
+}
+
+h1,
+h2,
+p {
+  margin-top: 0;
+}
+
+h1 {
+  margin-bottom: 10px;
+  font-size: clamp(30px, 5vw, 52px);
+  line-height: 1.08;
+  max-width: 880px;
+}
+
+.lead {
+  margin-bottom: 0;
+  max-width: 720px;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.86);
+}
+
+.statusCard {
+  width: 124px;
+  min-width: 124px;
+  height: 104px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  background: rgba(255, 255, 255, 0.12);
+  display: grid;
+  place-items: center;
+  text-align: center;
+}
+
+.statusCard span {
+  display: block;
+  font-size: 40px;
+  font-weight: 800;
+}
+
+.statusCard small {
+  display: block;
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: minmax(280px, 360px) minmax(0, 1fr);
+  gap: 22px;
+  padding: 22px clamp(14px, 3vw, 34px) 42px;
+}
+
+.controls {
+  position: sticky;
+  top: 16px;
+  align-self: start;
+  display: grid;
+  gap: 14px;
+}
+
+.controls section,
+.summary,
+.notes {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+  box-shadow: var(--shadow);
+}
+
+.controls section {
+  padding: 18px;
+}
+
+h2 {
+  margin-bottom: 14px;
+  font-size: 18px;
+}
+
+label {
+  display: grid;
+  gap: 7px;
+  margin-bottom: 14px;
+  font-size: 13px;
+  color: var(--muted);
+  font-weight: 700;
+}
+
+select,
+input[type="date"] {
+  width: 100%;
+  min-height: 42px;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  padding: 0 12px;
+  color: var(--ink);
+  background: white;
+  font-size: 15px;
+}
+
+.check {
+  grid-template-columns: 20px 1fr;
+  align-items: start;
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.check input {
+  margin-top: 3px;
+}
+
+.advice {
+  padding: 12px;
+  border-radius: 7px;
+  background: var(--warn);
+  color: #684020;
+  line-height: 1.55;
+  font-size: 14px;
+}
+
+.actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+button {
+  min-height: 40px;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  background: white;
+  color: var(--ink);
+  font-weight: 800;
+  cursor: pointer;
+}
+
+button:hover {
+  border-color: var(--accent);
+}
+
+.actions button:first-child,
+.tabs .active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: white;
+}
+
+.workspace {
+  display: grid;
+  gap: 14px;
+  min-width: 0;
+}
+
+.summary {
+  padding: 20px;
+  display: flex;
+  gap: 18px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.summary p {
+  margin-bottom: 0;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+.summary a {
+  white-space: nowrap;
+}
+
+.tabs {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.tabs button {
+  padding: 0 14px;
+}
+
+.groups {
+  display: grid;
+  gap: 14px;
+}
+
+.group {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--panel);
+}
+
+.groupHeader {
+  padding: 14px 16px;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  background: var(--soft);
+  border-bottom: 1px solid var(--line);
+}
+
+.groupHeader h3 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.groupHeader span {
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.item {
+  display: grid;
+  grid-template-columns: 28px minmax(0, 1fr) auto;
+  gap: 12px;
+  padding: 16px;
+  border-bottom: 1px solid var(--line);
+}
+
+.item:last-child {
+  border-bottom: 0;
+}
+
+.item input {
+  margin-top: 3px;
+}
+
+.item h4 {
+  margin: 0 0 7px;
+  font-size: 16px;
+}
+
+.item p {
+  margin: 0 0 10px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.chip {
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: #eef0ef;
+  color: #3d4743;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.chip.workday {
+  background: var(--warn);
+  color: #87511f;
+}
+
+.chip.official {
+  background: #e7f0ff;
+  color: #244f8f;
+}
+
+.priority {
+  align-self: start;
+  min-width: 72px;
+  text-align: center;
+  padding: 6px 8px;
+  border-radius: 7px;
+  background: #f2f5f3;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.priority.high {
+  background: #ffe8dc;
+  color: var(--accent-2);
+}
+
+.notes {
+  padding: 18px 20px;
+}
+
+.notes p {
+  margin-bottom: 10px;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.notes p:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 880px) {
+  .topbar {
+    display: block;
+    min-height: 260px;
+  }
+
+  .statusCard {
+    margin-top: 20px;
+  }
+
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  .controls {
+    position: static;
+  }
+
+  .summary,
+  .item {
+    display: block;
+  }
+
+  .summary a,
+  .priority {
+    display: inline-block;
+    margin-top: 12px;
+  }
+
+  .item input {
+    float: left;
+    margin-right: 10px;
+  }
+}
+
+@media print {
+  .topbar {
+    min-height: 0;
+    color: var(--ink);
+    background: white;
+    padding: 0 0 18px;
+  }
+
+  .controls,
+  .tabs,
+  .actions,
+  .statusCard {
+    display: none;
+  }
+
+  .layout {
+    display: block;
+    padding: 0;
+  }
+
+  .summary,
+  .group,
+  .notes {
+    box-shadow: none;
+    break-inside: avoid;
+  }
+}
