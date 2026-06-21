@@ -205,26 +205,36 @@ button:hover {
   display: flex;
   gap: 18px;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
+}
+
+.summary > div {
+  min-width: 0;
 }
 
 .summary p {
   margin-bottom: 0;
   color: var(--muted);
   line-height: 1.65;
+  overflow-wrap: anywhere;
 }
 
 .summary a {
+  flex: 0 0 auto;
   white-space: nowrap;
+  margin-top: 2px;
 }
 
 .tabs {
   display: flex;
   gap: 8px;
   flex-wrap: wrap;
+  align-items: center;
 }
 
 .tabs button {
+  flex: 0 0 auto;
+  height: 40px;
   padding: 0 14px;
 }
 
