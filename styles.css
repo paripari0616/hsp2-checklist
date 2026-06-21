@@ -206,6 +206,8 @@ button:hover {
   gap: 18px;
   justify-content: space-between;
   align-items: flex-start;
+  height: 134px;
+  overflow: hidden;
 }
 
 .summary > div {
@@ -374,6 +376,11 @@ button:hover {
   .summary,
   .item {
     display: block;
+  }
+
+  .summary {
+    height: auto;
+    overflow: visible;
   }
 
   .summary a,
